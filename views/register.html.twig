@@ -1,0 +1,43 @@
+{% extends 'layouts/default.html.twig' %}
+
+{% block main %}
+
+    {% if session().hasFlash('error') %}
+    <div class="alert alert-danger">
+        <ul class="m-0">
+            {% for error in session().getFlash('error') %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% endif %}
+    {% if session().hasFlash('success') %}
+        <div class="alert alert-success">
+            <ul class="m-0">
+                <p>{{ session().getFlash('success')[0] }}</p>
+            </ul>
+        </div>
+    {% endif %}
+    <div class="bg-body-tertiary p-5 rounded">
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Имя</label>
+                <input type="text" value="Some name" name="name" class="form-control" id="name" aria-describedby="titleHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" value="user@mail.ru" name="email" class="form-control" id="email" aria-describedby="titleHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" value="111111111" name="password" class="form-control" id="password" aria-describedby="titleHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="passwordConfirmation" class="form-label">Подтверждение пароля</label>
+                <input type="password" value="111111111" name="passwordConfirmation" class="form-control" id="passwordConfirmation" aria-describedby="titleHelp" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </form>
+    </div>
+{% endblock %}

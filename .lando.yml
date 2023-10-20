@@ -1,0 +1,11 @@
+name: php-framework
+recipe: lemp
+config:
+  via: nginx
+  config:
+    vhosts: .lando/nginx.conf
+  php: '8.2'
+  database: mysql
+services:
+  phpmyadmin:
+    type: phpmyadmin

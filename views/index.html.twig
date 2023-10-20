@@ -1,0 +1,14 @@
+{% extends 'layouts/default.html.twig' %}
+
+{% block main %}
+    <div class="bg-body-tertiary p-5 rounded">
+        <h1 class="text-primary">Posts</h1>
+        {% for post in posts %}
+            <div class="bg-body-tertiary p-5 rounded">
+                <h6 class="text-primary">Title: <a href="/posts/{{ post.id }}" class="text-primary">{{ post.title }}</a></h6>
+                <h6 class="text-decoration-underline">Content:</h6>
+                <p>{{post.body}}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
