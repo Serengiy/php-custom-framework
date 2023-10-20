@@ -18,7 +18,6 @@ class EventDispatcher implements EventDispatcherInterface
             $listener($event);
         }
 
-        //        dd($this->listeners);
         return $event;
     }
 

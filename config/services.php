@@ -62,12 +62,6 @@ $container->add(Kernel::class)
         EventDispatcher::class,
     ]);
 
-//$container->addShared('twig-loader', FilesystemLoader::class)
-//    ->addArgument(new StringArgument($viewsPath));
-//
-//$container->addShared('twig',Environment::class)
-//    ->addArgument('twig-loader');
-
 $container->addShared(SessionInterface::class, Session::class);
 
 $container->add('twig-factory', TwigFactory::class)
